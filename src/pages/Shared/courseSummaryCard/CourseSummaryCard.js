@@ -1,4 +1,5 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
@@ -7,16 +8,24 @@ const CourseSummaryCard = ({ course }) => {
     const { _id, classes, details, rating, duration } = course;
     console.log(course)
     return (
-        <Link to={`/course/${_id}`}>
-            <Card md={2} className="shadow-lg d-flex col-lg-4 p-3 mb-5 bg-body rounded  grid-container">
-                <Card.Img style={{ height: '12rem' }} variant="top" src={classes.img} />
-                <Card.Body>
-                    <Card.Title>{classes.name}</Card.Title>
-                    <Card.Text>
-                    </Card.Text>
-                </Card.Body>
-            </Card>
-        </Link>
+        <Container>
+            <Row className=''>
+                <Col>
+                    <Link to={`/course/${_id}`}>
+                        <Card>
+                            <Card.Img style={{ height: '12rem' }} variant="top" src={classes.img} />
+                            <Card.Body>
+                                <Card.Title>{classes.name}</Card.Title>
+                                <Card.Text>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Link>
+                </Col>
+            </Row>
+        </Container>
+
+
 
 
 
