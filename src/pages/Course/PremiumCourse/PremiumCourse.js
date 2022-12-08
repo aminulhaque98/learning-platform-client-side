@@ -8,7 +8,7 @@ const PremiumCourse = () => {
     const { classes, details, rating, duration } = course;
 
     return (
-        <Card className="shadow-lg p-3 rounded bg-body text-success">
+        <Card className="shadow-lg p-3 mb-5 rounded bg-body text-success">
             <Card.Img variant="top" src={classes?.img} />
             <Card.Body>
 

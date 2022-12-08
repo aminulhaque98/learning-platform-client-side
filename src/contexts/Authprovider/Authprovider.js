@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import './AuthProvider.css';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import app from '../../firebase/firebase.config';
 
 
@@ -25,6 +25,13 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
+    const verifyEmail = () => {
+        sendEmailVerification(auth.currentUser)
+            .then(() => {
+                alert('Please check your email and verify')
+            })
+    }
+
     const signInUser = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
@@ -45,7 +52,7 @@ const AuthProvider = ({ children }) => {
 
     }, [])
 
-    const authInfo = { user, providerLogin, logOut, creatUser, signInUser, toggleTheme };
+    const authInfo = { user, providerLogin, logOut, creatUser, verifyEmail, signInUser, toggleTheme };
 
 
     return (

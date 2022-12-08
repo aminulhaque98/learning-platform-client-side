@@ -10,7 +10,8 @@ import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
-    const { providerLogin, creatUser } = useContext(AuthContext);
+    const { providerLogin, creatUser, verifyEmail } = useContext(AuthContext);
+
     const notify = () => toast("Your Registration success");
 
     const googleProvider = new GoogleAuthProvider();
@@ -29,9 +30,13 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset();
+                verifyEmail();
+                notify();
             })
             .catch(error => console.error(error))
     }
+
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
@@ -72,7 +77,7 @@ const Register = () => {
                     <Form.Control name='password' type="password" placeholder="Password" required />
                 </Form.Group>
 
-                <Button onClick={notify} variant="primary" type="submit">
+                <Button variant="primary" type="submit">
                     Register Now
                 </Button>
                 <br />
@@ -87,6 +92,7 @@ const Register = () => {
                 <Button onClick={handleGithubSignIn} className='mb-2 rounded' variant="outline-secondary"> <FaGithub></FaGithub> Login With GitHub</Button>
             </ButtonGroup>
             <p> <small>Already have an account? Please</small> <Link to='/login'>Log in</Link> </p>
+            <ToastContainer />
         </div>
     );
 };

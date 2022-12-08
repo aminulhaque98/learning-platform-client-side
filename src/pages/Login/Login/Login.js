@@ -10,7 +10,7 @@ const Login = () => {
 
     const { signInUser } = useContext(AuthContext);
 
-    const notify = () => toast("Login success");
+    const notify = () => toast("Successfully login to the account");
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -23,6 +23,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset();
+                notify();
             })
             .catch(error => console.error(error))
     }
@@ -40,7 +42,7 @@ const Login = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
-            <Button onClick={notify} variant="primary" type="submit">
+            <Button variant="primary" type="submit">
                 Login
             </Button>
             <br />
@@ -49,6 +51,7 @@ const Login = () => {
             </Form.Text>
 
             <ToastContainer />
+
             <p> <small>New to this website? Please</small> <Link to='/register'>Register Now</Link> </p>
         </Form>
     );

@@ -12,7 +12,7 @@ const SideNav = () => {
 
     return (
         <div>
-            <h4>Our Category : {categories.length}</h4>
+            <h4>All Category!</h4>
             <div>
                 {
                     categories.map(category => <p key={category.id}>
