@@ -13,7 +13,7 @@ const Home = () => {
                 <Row sm={1} md={2} lg={3}>
                     {
                         allCourse.map(course =>
-                            <Col className="shadow-sm p-3 g-3 mb-5 bg-body rounded">
+                            <Col className="shadow-sm p-3 g-3 mb-3 bg-body rounded">
                                 <CourseSummaryCard
                                     key={course._id}
                                     course={course}

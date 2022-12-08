@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithEmailLink, signInWithPopup, signOut } from 'firebase/auth'
+import './AuthProvider.css';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import app from '../../firebase/firebase.config';
 
 
@@ -8,6 +9,13 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [theme, setTheme] = useState("light");
+
+
+    const toggleTheme = () => {
+        setTheme((curr) => (curr === "light" ? "dark" : "light"))
+    };
+
 
     const providerLogin = (provider) => {
         return signInWithPopup(auth, provider);
@@ -37,12 +45,17 @@ const AuthProvider = ({ children }) => {
 
     }, [])
 
-    const authInfo = { user, providerLogin, logOut, creatUser, signInUser }
+    const authInfo = { user, providerLogin, logOut, creatUser, signInUser, toggleTheme };
+
 
     return (
-        <AuthContext.Provider value={authInfo}>
-            {children}
-        </AuthContext.Provider>
+        <div className={theme}>
+            <AuthContext.Provider value={authInfo}>
+
+                {children}
+
+            </AuthContext.Provider>
+        </div>
     );
 };
 

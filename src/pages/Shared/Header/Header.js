@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Form from 'react-bootstrap/Form';
 import { Button, Image } from 'react-bootstrap';
 import { FaUserAlt } from 'react-icons/fa';
 import Container from 'react-bootstrap/Container';
@@ -10,7 +11,7 @@ import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
 import SideNav from '../SideNav/SideNav';
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, toggleTheme } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
@@ -40,7 +41,7 @@ const Header = () => {
                                 <Image
                                     style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image>
                                 :
-                                <FaUserAlt></FaUserAlt>
+                                <FaUserAlt style={{ height: '30px' }} ></FaUserAlt>
                             }
                         </Link>
 
@@ -61,9 +62,14 @@ const Header = () => {
 
                         </Link>
 
-                        <Nav.Link eventKey={2} href="#memess">
-                            Dank memes
-                        </Nav.Link>
+                        <Form onClick={toggleTheme} className='ms-3'>
+                            <Form.Check
+                                type="switch"
+                                id="custom-switch"
+                            // label="Check this switch" 
+
+                            />
+                        </Form>
                     </Nav>
                     <div className='d-lg-none'>
                         <SideNav></SideNav>
