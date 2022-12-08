@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
@@ -6,6 +8,8 @@ import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
 const Login = () => {
 
     const { signInUser } = useContext(AuthContext);
+
+    const notify = () => toast("Login success");
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -35,12 +39,15 @@ const Login = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button onClick={notify} variant="primary" type="submit">
                 Login
             </Button>
             <Form.Text className="text-danger">
                 We'll never share your email with anyone else.
             </Form.Text>
+
+            <ToastContainer />
+
         </Form>
     );
 };

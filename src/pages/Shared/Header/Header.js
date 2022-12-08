@@ -38,8 +38,14 @@ const Header = () => {
 
                         <Link className='me-3' to="/profile">
                             {user?.photoURL ?
-                                <Image
-                                    style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image>
+                                <>
+                                    {/* ----jamela ace --- */}
+
+                                    {user?.photoURL ?
+                                        <Image
+                                            style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image> : <span>{user?.displayName}</span>
+                                    }
+                                </>
                                 :
                                 <FaUserAlt style={{ height: '30px' }} ></FaUserAlt>
                             }

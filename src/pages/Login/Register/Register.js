@@ -1,5 +1,7 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { FaGooglePlusG, FaGithub } from 'react-icons/fa';
 import { ButtonGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -8,6 +10,7 @@ import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
 
 const Register = () => {
     const { providerLogin, creatUser } = useContext(AuthContext);
+    const notify = () => toast("Your Registration success");
 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -68,8 +71,8 @@ const Register = () => {
                     <Form.Control name='password' type="password" placeholder="Password" required />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
-                    Register
+                <Button onClick={notify} variant="primary" type="submit">
+                    Register Now
                 </Button>
                 <Form.Text className="text-danger">
                     We'll never share your email with anyone else.
@@ -83,6 +86,7 @@ const Register = () => {
                 <Button onClick={handleGithubSignIn} className='mb-2' variant="outline-secondary"> <FaGithub></FaGithub> Login With GitHub</Button>
 
             </ButtonGroup>
+
         </div>
     );
 };
