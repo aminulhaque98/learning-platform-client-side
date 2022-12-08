@@ -10,7 +10,7 @@ const CourseSummaryCard = ({ course }) => {
         <Container>
             <Row className=''>
                 <Col>
-                    <Link to={`/course/${_id}`}>
+                    <Link to={`/details/${_id}`}>
                         <Card>
                             <Card.Img style={{ height: '12rem' }} variant="top" src={classes.img} />
                             <Card.Body>

@@ -7,6 +7,7 @@ import { ButtonGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     const { providerLogin, creatUser } = useContext(AuthContext);
@@ -74,19 +75,18 @@ const Register = () => {
                 <Button onClick={notify} variant="primary" type="submit">
                     Register Now
                 </Button>
+                <br />
                 <Form.Text className="text-danger">
                     We'll never share your email with anyone else.
                 </Form.Text>
             </Form>
 
             <ButtonGroup>
+                <Button onClick={handleGoogleSignIn} className='mb-2 me-5 rounded d-lg-block' variant="outline-primary"> <FaGooglePlusG></FaGooglePlusG> Login With Google</Button>
 
-                <Button onClick={handleGoogleSignIn} className='mb-2 me-5' variant="outline-primary"> <FaGooglePlusG></FaGooglePlusG> Login With Google</Button>
-
-                <Button onClick={handleGithubSignIn} className='mb-2' variant="outline-secondary"> <FaGithub></FaGithub> Login With GitHub</Button>
-
+                <Button onClick={handleGithubSignIn} className='mb-2 rounded' variant="outline-secondary"> <FaGithub></FaGithub> Login With GitHub</Button>
             </ButtonGroup>
-
+            <p> <small>Already have an account? Please</small> <Link to='/login'>Log in</Link> </p>
         </div>
     );
 };

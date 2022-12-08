@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -42,12 +43,13 @@ const Login = () => {
             <Button onClick={notify} variant="primary" type="submit">
                 Login
             </Button>
+            <br />
             <Form.Text className="text-danger">
                 We'll never share your email with anyone else.
             </Form.Text>
 
             <ToastContainer />
-
+            <p> <small>New to this website? Please</small> <Link to='/register'>Register Now</Link> </p>
         </Form>
     );
 };

@@ -1,25 +1,35 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useLoaderData } from 'react-router-dom';
+import CourseSummaryCard from '../../Shared/courseSummaryCard/CourseSummaryCard';
 
 const Course = () => {
-    const course = useLoaderData();
-    const { _id, classes, details, rating, duration } = course;
+    const allCourse = useLoaderData();
+
     return (
 
-        <Card md={2} className="shadow-lg p-3 mb-5 bg-body rounded  grid-container">
-            <Card.Img variant="top" src={classes.img} />
-            <Card.Body>
-                <Card.Title>{classes.name}</Card.Title>
-                <Card.Text>
-                    {details}
-                </Card.Text>
-                <p>Duration : {duration}</p>
-                <p>Price: {rating?.Price}</p>
-                <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-        </Card>
+        <div>
+            <h2>All Courses Our</h2>
+
+            <Container>
+                <Row sm={1} md={2} lg={3}>
+                    {
+                        allCourse.map(course =>
+                            <Col className="shadow-sm p-3 g-3 mb-3 bg-body rounded">
+                                <CourseSummaryCard
+                                    key={course._id}
+                                    course={course}
+                                ></CourseSummaryCard>
+                            </Col>
+                        )
+                    }
+
+                </Row>
+            </Container>
+        </div>
+
     );
 };
 

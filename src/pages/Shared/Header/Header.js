@@ -30,7 +30,7 @@ const Header = () => {
 
                     </Nav>
                     <Nav>
-                        <Link to='/'><Button className='me-3' variant="outline-primary">Courses</Button></Link>
+                        <Link to='/course'><Button className='me-3' variant="outline-primary">Courses</Button></Link>
                         <Link to='/faq'><Button className='me-3' variant="outline-primary">FAQ</Button></Link>
                         <Link to='/blog'><Button className='me-3' variant="outline-primary">Blog</Button></Link>
 
@@ -61,7 +61,8 @@ const Header = () => {
                                     :
                                     <>
                                         <Link to='/login'><Button className='me-3' variant="outline-primary">Login</Button></Link>
-                                        <Link to='/register'><Button variant="outline-primary">Register</Button></Link>
+
+                                        {/* <Link to='/register'><Button variant="outline-primary">Register</Button></Link> */}
                                     </>
                             }
 

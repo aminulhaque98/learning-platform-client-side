@@ -4,10 +4,12 @@ import { useLoaderData } from 'react-router-dom';
 import CourseSummaryCard from '../../Shared/courseSummaryCard/CourseSummaryCard';
 
 const Home = () => {
-    const allCourse = useLoaderData();
+    // const allCourse = useLoaderData();
     return (
         <div>
-            <h2>All Courses Our</h2>
+            <h3>this is home page</h3>
+
+            {/* <h2>All Courses Our</h2>
 
             <Container>
                 <Row sm={1} md={2} lg={3}>
@@ -23,7 +25,7 @@ const Home = () => {
                     }
 
                 </Row>
-            </Container>
+            </Container> */}
         </div>
     );
 };
