@@ -4,11 +4,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-
     const { signInUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
     const notify = () => toast("Successfully login to the account");
 
@@ -25,6 +27,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 notify();
+                navigate(from, { reolace: true })
             })
             .catch(error => console.error(error))
     }

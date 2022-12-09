@@ -10,6 +10,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [theme, setTheme] = useState("light");
+    const [loading, setLoading] = useState(true);
 
 
     const toggleTheme = () => {
@@ -42,8 +43,9 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+            setLoading(false);
             console.log('user inside authState change', currentUser);
-            setUser(currentUser)
         });
 
         return () => {
@@ -52,7 +54,7 @@ const AuthProvider = ({ children }) => {
 
     }, [])
 
-    const authInfo = { user, providerLogin, logOut, creatUser, verifyEmail, signInUser, toggleTheme };
+    const authInfo = { user, loading, providerLogin, logOut, creatUser, verifyEmail, signInUser, toggleTheme };
 
 
     return (

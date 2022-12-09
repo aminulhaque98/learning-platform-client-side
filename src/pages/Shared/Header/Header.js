@@ -9,6 +9,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
 import SideNav from '../SideNav/SideNav';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
 
 const Header = () => {
     const { user, logOut, toggleTheme } = useContext(AuthContext);
@@ -39,13 +42,16 @@ const Header = () => {
                         <Link className='me-3' to="/profile">
                             {user?.photoURL ?
                                 <>
-                                    {/* ----jamela ace --- */}
 
                                     {user?.photoURL ?
                                         <Image
                                             style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image> : <span>{user?.displayName}</span>
                                     }
+
                                 </>
+
+
+
                                 :
                                 <FaUserAlt style={{ height: '30px' }} ></FaUserAlt>
                             }
