@@ -15,7 +15,7 @@ const Course = () => {
                 <Row sm={1} md={2} lg={3}>
                     {
                         allCourse.map(course =>
-                            <Col className="shadow-sm p-3 g-3 mb-3 bg-body rounded">
+                            <Col className="g-3 mb-3 bg-body rounded">
                                 <CourseSummaryCard
                                     key={course._id}
                                     course={course}

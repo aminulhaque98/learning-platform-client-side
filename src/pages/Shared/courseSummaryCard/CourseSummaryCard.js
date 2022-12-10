@@ -11,7 +11,7 @@ const CourseSummaryCard = ({ course }) => {
             <Row className=''>
                 <Col>
                     <Link to={`/details/${_id}`}>
-                        <Card>
+                        <Card className="shadow-lg p-3 rounded">
                             <Card.Img style={{ height: '12rem' }} variant="top" src={classes.img} />
                             <Card.Body>
                                 <Card.Title>{classes.name}</Card.Title>
