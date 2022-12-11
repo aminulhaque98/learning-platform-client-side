@@ -16,7 +16,7 @@ const PremiumCourse = () => {
                 // Setting various property values
                 let alink = document.createElement('a');
                 alink.href = fileURL;
-                alink.download = 'a.pdf';
+                alink.download = 'http://localhost:3000/premium/0282e0e58a5c404fbd15261f11c2ab6a.pdf';
                 alink.click();
             })
         })

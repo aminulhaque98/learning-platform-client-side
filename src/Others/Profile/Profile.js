@@ -30,7 +30,7 @@ const Profile = () => {
                 <Form.Control onChange={handleNameChange} defaultValue={name} type="text" placeholder="your name" />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formBasicPhotoURL">
                 <Form.Label>Photo URL</Form.Label>
                 <Form.Control defaultValue={user?.photoURL} type="text" placeholder="photo URL" />
             </Form.Group>

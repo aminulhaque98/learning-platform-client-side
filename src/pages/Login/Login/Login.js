@@ -5,8 +5,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Login = () => {
+    const [error, setError] = useState('');
     const { signInUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -25,11 +27,15 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setError('');
                 form.reset();
                 notify();
                 navigate(from, { reolace: true })
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+            });
     }
 
     return (
@@ -49,8 +55,8 @@ const Login = () => {
                 Login
             </Button>
             <br />
-            <Form.Text className="text-danger">
-                We'll never share your email with anyone else.
+            <Form.Text className="text-danger">{error}
+                <p>We'll never share your email with anyone else.</p>
             </Form.Text>
 
             <ToastContainer />

@@ -3,6 +3,7 @@ import Main from "../../layout/Main";
 import Blog from "../../Others/Blog/Blog";
 import Faq from "../../Others/FAQ/Faq";
 import Profile from "../../Others/Profile/Profile";
+import TermsCondition from "../../Others/TermsConditions/TermsCondition";
 import Category from "../../pages/Category/Category/Category";
 import Course from "../../pages/Course/Course/Course";
 import CourseDetails from "../../pages/Course/CourseDetails/CourseDetails";
@@ -63,6 +64,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/terms',
+                element: <TermsCondition></TermsCondition>
             },
             {
                 path: '/profile',
