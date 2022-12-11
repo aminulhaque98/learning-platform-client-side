@@ -39,30 +39,32 @@ const Login = () => {
     }
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control name="email" type="email" placeholder="Enter email" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control name="password" type="password" placeholder="Password" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-                Login
-            </Button>
-            <br />
-            <Form.Text className="text-danger">{error}
-                <p>We'll never share your email with anyone else.</p>
-            </Form.Text>
+        <div className='w-50 mb-10 shadow-lg p-3 mb-5 bg-body rounded'>
+            <Form onSubmit={handleSubmit} className="">
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control name="email" type="email" placeholder="Enter email" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control name="password" type="password" placeholder="Password" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" label="Check me out" />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                    Login
+                </Button>
+                <br />
+                <Form.Text className="text-danger">{error}
+                    <p>We'll never share your email with anyone else.</p>
+                </Form.Text>
 
-            <ToastContainer />
+                <ToastContainer />
 
-            <p> <small>New to this website? Please</small> <Link to='/register'>Register Now</Link> </p>
-        </Form>
+                <p> <small>New to this website? Please</small> <Link to='/register'>Register Now</Link> </p>
+            </Form>
+        </div>
     );
 };
 

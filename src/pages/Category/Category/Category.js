@@ -5,7 +5,7 @@ import CourseSummaryCard from '../../Shared/courseSummaryCard/CourseSummaryCard'
 const Category = () => {
     const categoryCourse = useLoaderData();
     return (
-        <div>
+        <div className='w-50' style={{ height: '30rem', width: '30rem', alignItems: 'center' }}>
             {/* <h3>Course Category!</h3> */}
 
             {
