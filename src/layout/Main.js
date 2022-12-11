@@ -14,11 +14,11 @@ const Main = () => {
             <Header></Header>
             <Container>
                 <Row>
-                    <Col lg="4" className='d-none d-lg-block'>
+                    {/* <Col lg="4" className='d-none d-lg-block'>
                         <SideNav></SideNav>
-                    </Col>
+                    </Col> */}
 
-                    <Col lg="8">
+                    <Col>
                         <Outlet></Outlet>
                     </Col>
                 </Row>
