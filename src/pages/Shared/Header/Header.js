@@ -35,8 +35,7 @@ const Header = () => {
                 <Navbar.Brand className=""><Link to='/'>
 
                     <div className="d-flex g-3">
-                        <h2 className='me-3'>edu</h2>
-                        <img src="../../../../public/logo192.png" alt="" />
+                        <img className='me-3' src='logoEDU.png' alt="" />
                         <h2 className=' '>Education Master</h2>
 
                     </div>
