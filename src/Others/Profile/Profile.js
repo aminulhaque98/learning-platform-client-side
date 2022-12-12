@@ -1,4 +1,5 @@
 import React from 'react';
+import './Profile.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useContext } from 'react';
@@ -19,7 +20,7 @@ const Profile = () => {
     }
 
     return (
-        <div className='w-50 align-items-center mb-10 shadow-lg p-3 mb-5 bg-body rounded'>
+        <div className='w-50 profileDesign mb-10 shadow-lg p-3 mb-5 bg-body rounded'>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>

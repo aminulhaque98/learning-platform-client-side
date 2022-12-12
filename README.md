@@ -15,7 +15,9 @@ https://github.com/programming-hero-web-course1/b610-lerning-platform-server-sid
 
 ## My learning-platform live Webpage link:
 
- [Link](http://localhost/)。
+ To Explore Live Site please Click ,[Live Here](http://localhost/)。
+
+> Site is Deployed in Firebase.com
 
 # Getting Started with Create React App
 

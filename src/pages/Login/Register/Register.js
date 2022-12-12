@@ -1,4 +1,5 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import './Register.css'
 import React, { useContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -78,7 +79,7 @@ const Register = () => {
     }
 
     return (
-        <div className='w-50 align-items-center mb-10 shadow-lg p-3 mb-5 bg-body rounded'>
+        <div className='w-50 mb-10 shadow-lg p-3 mb-5 bg-body rounded registerDesign'>
             <h1>Registration:</h1>
             <Form onSubmit={handleSubmit} className="mb-3">
                 <Form.Group className="mb-3" controlId="formBasicName">
@@ -99,7 +100,7 @@ const Register = () => {
                     <Form.Control name='password' type="password" placeholder="Password" required />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Group className="mb-3 text-dark" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox"
                         onClick={handleAccepted}
                         label={<>Accept <Link to='/terms'>Terms and conditions</Link> </>} />
@@ -121,7 +122,7 @@ const Register = () => {
 
                 <ToastContainer />
             </ButtonGroup>
-            <p> <small>Already have an account? Please</small> <Link to='/login'>Log in</Link> </p>
+            <p> <small className="text-dark">Already have an account? Please</small> <Link to='/login'>Log in</Link> </p>
 
         </div>
     );

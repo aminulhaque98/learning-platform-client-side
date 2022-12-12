@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import './Login.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
@@ -7,14 +8,18 @@ import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
+
+
+
 const Login = () => {
     const [error, setError] = useState('');
     const { signInUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/'
-
+    const from = location.state?.from?.pathname || '/';
     const notify = () => toast("Successfully login to the account");
+
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -29,8 +34,9 @@ const Login = () => {
                 console.log(user);
                 setError('');
                 form.reset();
+
+                navigate(from, { reolace: true });
                 notify();
-                navigate(from, { reolace: true })
             })
             .catch(error => {
                 console.error(error);
@@ -38,9 +44,10 @@ const Login = () => {
             });
     }
 
+
     return (
-        <div className='w-50 mb-10 shadow-lg p-3 mb-5 bg-body rounded'>
-            <h1 className="" animation="glow">Login:</h1>
+        <div className='w-50 sm-w-100 mb-10 shadow-lg p-3 mb-5 bg-body rounded formDesign'>
+            <h1 className="" >Login:</h1>
             <Form onSubmit={handleSubmit} className="">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -51,7 +58,7 @@ const Login = () => {
                     <Form.Control name="password" type="password" placeholder="Password" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Check className="text-dark" type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Login
@@ -63,7 +70,7 @@ const Login = () => {
 
                 <ToastContainer />
 
-                <p> <small>New to this website? Please</small> <Link to='/register'>Register Now</Link> </p>
+                <p> <small className="text-dark">New to this website? Please</small> <Link to='/register'>Register Now</Link> </p>
             </Form>
         </div>
     );
