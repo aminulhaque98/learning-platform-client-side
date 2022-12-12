@@ -33,20 +33,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 # Notable Used Technology
-React JS
-React Router
-React Context API
-React-stripe-js
-React-query
-Axios
-React Bootstrap
-React Hot-toast
-React Confirm-alert
-React Photo-view
-React Icons
-Firebase Auntentication
-Jwt Verification
-Local-Storage
+** React JS
+** React Router
+** React Context API
+** React-stripe-js
+** React-query
+** Axios
+** React Bootstrap
+** React Hot-toast
+** React Confirm-alert
+** React Photo-view
+** React Icons
+** Firebase Auntentication
+** Jwt Verification
+** Local-Storage
 
 
 
