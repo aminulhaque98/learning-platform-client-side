@@ -5,7 +5,6 @@ import { FaUserAlt } from 'react-icons/fa';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
 import SideNav from '../SideNav/SideNav';
@@ -21,6 +20,12 @@ const Header = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
+
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            {user?.displayName}
+        </Tooltip>
+    );
 
     return (
 
@@ -47,27 +52,32 @@ const Header = () => {
                         <Link to='/faq'><Button className='me-3' variant="outline-primary">FAQ</Button></Link>
                         <Link to='/blog'><Button className='me-3' variant="outline-primary">Blog</Button></Link>
 
-                        {/* <Nav.Link href="#pricing">Blog</Nav.Link> */}
+
 
                         <Link className='me-3' to="/profile">
                             {user?.photoURL ?
-                                <>
+                                <OverlayTrigger
+                                    placement="bottom"
+                                    delay={{ show: 250, hide: 400 }}
+                                    overlay={renderTooltip}>
 
                                     {user?.photoURL ?
                                         <Image
-                                            style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image> : <span>{user?.displayName}</span>
+                                            style={{ height: '30px' }} roundedCircle src={user?.photoURL}>
+
+                                        </Image>
+                                        :
+                                        <span>{user?.displayName}</span>
                                     }
 
-                                </>
-
-
+                                </OverlayTrigger>
 
                                 :
                                 <FaUserAlt style={{ height: '30px' }} ></FaUserAlt>
                             }
                         </Link>
 
-                        <Link href="#deets">
+                        <Link href="">
                             {
                                 user?.uid ?
                                     <>
@@ -94,6 +104,7 @@ const Header = () => {
                             />
                         </Form>
                     </Nav>
+
                     <div className='d-lg-none'>
                         <SideNav></SideNav>
                     </div>

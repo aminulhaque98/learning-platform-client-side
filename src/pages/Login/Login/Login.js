@@ -40,6 +40,7 @@ const Login = () => {
 
     return (
         <div className='w-50 mb-10 shadow-lg p-3 mb-5 bg-body rounded'>
+            <h1 className="" animation="glow">Login:</h1>
             <Form onSubmit={handleSubmit} className="">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
