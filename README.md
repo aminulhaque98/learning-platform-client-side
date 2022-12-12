@@ -5,9 +5,6 @@ b610-learning-platform-client-side-aminulhaque98 created by GitHub Classroom
 b610-lerning-platform-server-side-aminulhaque98 created by GitHub Classroom
 
 
-
-
-
 ### My private client-side repo link:
 https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-aminulhaque98
 
@@ -18,11 +15,7 @@ https://github.com/programming-hero-web-course1/b610-lerning-platform-server-sid
 
 ## My learning-platform live Webpage link:
 
-
-
-
-
-
+ [Link](http://localhost/)。
 
 # Getting Started with Create React App
 
@@ -32,21 +25,42 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+# Features
+* Independent admin,.
+* Admin can verify a seller.
+* item from get course and wish list.
+* user can login for course using course.
+* details page.
+* Manual and google login using Firebase authentication.
+* Manual and github login using Firebase authentication.
+* User password Retrieving in case of necessity.
+* JWT verification support.
+* Protected private route and Course and profile route.
+* Pagination facility.
+* Dynamic title.
+* Effective search method.
+* Smooth routing system.
+* Dark and Light theme implemented.
+* Error page assistance in case of fault.
+* Responsive and user friendly UI for course, details and small devices like mobile.
+* A sort and simple but effective Q&A section.
+
+
 # Notable Used Technology
-** React JS
-** React Router
-** React Context API
-** React-stripe-js
-** React-query
-** Axios
-** React Bootstrap
-** React Hot-toast
-** React Confirm-alert
-** React Photo-view
-** React Icons
-** Firebase Auntentication
-** Jwt Verification
-** Local-Storage
+* React JS
+* React Router
+* React Context API
+* React-stripe-js
+* React-query
+* Axios
+* React Bootstrap
+* React Hot-toast
+* React Confirm-alert
+* React Photo-view
+* React Icons
+* Firebase Auntentication
+* Jwt Verification
+* Local-Storage
 
 
 
