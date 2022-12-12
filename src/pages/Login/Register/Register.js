@@ -1,8 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import './Register.css'
 import React, { useContext } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { FaGooglePlusG, FaGithub } from 'react-icons/fa';
 import { ButtonGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -10,13 +8,14 @@ import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../contexts/Authprovider/Authprovider';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const { providerLogin, createUser, verifyEmail, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
 
-    const notify = () => toast("Your Registration success");
+
 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -33,12 +32,11 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 setError('');
                 form.reset();
                 handleUpdateUserProfile(name, photoURL)
                 verifyEmail();
-                notify();
+                toast.success('Your Registration success,Please verify your email')
             })
             .catch(error => {
                 console.error(error);
@@ -80,7 +78,7 @@ const Register = () => {
 
     return (
         <div className='w-50 mb-10 shadow-lg p-3 mb-5 bg-body rounded registerDesign'>
-            <h1>Registration:</h1>
+            <h1 className="text-dark">Registration:</h1>
             <Form onSubmit={handleSubmit} className="mb-3">
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Your Name</Form.Label>
@@ -120,7 +118,6 @@ const Register = () => {
 
                 <Button onClick={handleGithubSignIn} className='mb-2 rounded' variant="outline-secondary"> <FaGithub></FaGithub> Login With GitHub</Button>
 
-                <ToastContainer />
             </ButtonGroup>
             <p> <small className="text-dark">Already have an account? Please</small> <Link to='/login'>Log in</Link> </p>
 

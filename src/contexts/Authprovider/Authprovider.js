@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
     const verifyEmail = () => {
         sendEmailVerification(auth.currentUser)
             .then(() => {
-                alert('Please check your email and verify')
+                // alert('Please check your email and verify')
             })
     }
 
