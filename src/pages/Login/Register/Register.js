@@ -36,7 +36,7 @@ const Register = () => {
                 form.reset();
                 handleUpdateUserProfile(name, photoURL)
                 verifyEmail();
-                toast.success('Your Registration success,Please verify your email')
+                toast.success('Your Registration success,Please verify your email address.')
             })
             .catch(error => {
                 console.error(error);

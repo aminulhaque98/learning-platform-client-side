@@ -12,7 +12,7 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, setLoading } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -33,14 +33,21 @@ const Login = () => {
                 console.log(user);
                 setError('');
                 form.reset();
-
-                navigate(from, { reolace: true });
-                toast.success('Successfully login to the account')
+                if (user.emailVerified) {
+                    navigate(from, { reolace: true });
+                    toast.success('Successfully login to the account');
+                }
+                else {
+                    toast.error('Your email is not verified.Please now verified your email address.')
+                }
             })
             .catch(error => {
                 console.error(error);
                 setError(error.message);
-            });
+            })
+            .finally(() => {
+                setLoading(false)
+            })
     }
 
 
