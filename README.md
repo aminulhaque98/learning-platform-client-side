@@ -15,7 +15,7 @@ https://github.com/programming-hero-web-course1/b610-lerning-platform-server-sid
 
 ## My learning-platform live Webpage link:
 
- To Explore Live Site please Click ,[Live Here](http://localhost/)。
+ To Explore Live Site please Click ,[Live Here](https://learning-platform-client-6a9ba.web.app/)。
 
 > Site is Deployed in Firebase.com
 

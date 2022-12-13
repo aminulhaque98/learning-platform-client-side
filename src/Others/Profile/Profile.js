@@ -12,7 +12,6 @@ const Profile = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(name)
     }
 
     const handleNameChange = event => {

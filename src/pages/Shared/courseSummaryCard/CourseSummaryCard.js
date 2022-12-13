@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const CourseSummaryCard = ({ course }) => {
     const { _id, classes, details, rating, duration } = course;
-    console.log(course)
+
     return (
         <Container>
             <Row className=''>

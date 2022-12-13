@@ -32,22 +32,22 @@ export const routes = createBrowserRouter([
             {
                 path: '/course',
                 element: <Course></Course>,
-                loader: () => fetch('http://localhost:5000/course')
+                loader: () => fetch('https://lerning-platform-server-xi.vercel.app/course')
             },
             {
                 path: '/category/:id',
                 element: <Category></Category>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://lerning-platform-server-xi.vercel.app/category/${params.id}`)
             },
             {
                 path: '/details/:id',
                 element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://lerning-platform-server-xi.vercel.app/course/${params.id}`)
             },
             {
                 path: '/premium/:id',
                 element: <PrivateRoute><PremiumCourse></PremiumCourse></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://lerning-platform-server-xi.vercel.app/course/${params.id}`)
             },
             {
                 path: '/faq',

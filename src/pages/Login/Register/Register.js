@@ -27,7 +27,6 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, photoURL, password);
 
         createUser(email, password)
             .then(result => {
@@ -81,20 +80,20 @@ const Register = () => {
             <h1 className="text-dark">Registration:</h1>
             <Form onSubmit={handleSubmit} className="mb-3">
                 <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Label>Your Name</Form.Label>
+                    <Form.Label className="text-dark">Your Name</Form.Label>
                     <Form.Control name='name' type="text" placeholder="Your Name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicphotoURL">
-                    <Form.Label>Photo URL</Form.Label>
+                    <Form.Label className="text-dark">Photo URL</Form.Label>
                     <Form.Control name='photoURL' type="text" placeholder="Photo URL" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label className="text-dark">Email address</Form.Label>
                     <Form.Control name='email' type="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label className="text-dark">Password</Form.Label>
                     <Form.Control name='password' type="password" placeholder="Password" required />
                 </Form.Group>
 
